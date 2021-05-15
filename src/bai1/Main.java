@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        QLCB ql = new QLCB();
+        System.out.println("Bạn muốn danh sách có bao nhiêu phần tử?");
+        int size = sc.nextInt();
+        QLCB ql = new QLCB(size);
         int option = - 1;
         while (option!=0){
             display();
@@ -24,9 +26,6 @@ public class Main {
                     break;
                 case 3:
                     ql.displayCanbo();
-                    break;
-                case 4:
-                    System.out.println("4");
                     break;
                 case 0:
                     System.exit(0);

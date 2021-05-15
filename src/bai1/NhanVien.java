@@ -19,11 +19,11 @@ public class NhanVien extends CanBo{
     @Override
     public String toString() {
         return "NhanVien{" +
-                " name = "+getName()+
-                " age = "+getAge()+
-                " gender = " + getGender()+
-                " address = " +getAddress()+
-                " congviec='" + congviec + '\'' +
+                " name: "+getName()+
+                " ,age: "+getAge()+
+                " ,gender: " + getGender()+
+                " ,address: " +getAddress()+
+                " ,công việc: " + getCongviec() +
                 '}';
     }
 }

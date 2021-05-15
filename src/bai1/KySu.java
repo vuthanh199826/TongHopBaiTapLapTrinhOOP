@@ -19,11 +19,11 @@ public class KySu extends CanBo{
     @Override
     public String toString() {
         return "KySu{" +
-                " name = " + getName() +
-                " tuoi = " + getAge() +
-                " gioi tinh = " + getGender() +
-                " dia chi = " + getAddress() +
-                " nganhdaotao='" + nganhdaotao + '\'' +
+                " name: " + getName() +
+                " ,age: " + getAge() +
+                " ,gender: " + getGender() +
+                " ,address: " + getAddress() +
+                " ,ngành đào tạo: " + getNganhdaotao() +
                 '}';
     }
 }
