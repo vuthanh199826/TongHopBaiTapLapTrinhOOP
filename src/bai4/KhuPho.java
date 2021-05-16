@@ -30,4 +30,22 @@ public class KhuPho {
             System.out.println("--------------------------------------------");
         }
     }
+
+    public void searchHoDanCu(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ban muon tim ho dan cu co bao nhieu thanh vien ???");
+        int number = sc.nextInt();
+        boolean finded = false;
+        for (int i = 0; i < index; i++) {
+            if(ho[i].getSoThanhVien()==number){
+                System.out.println(ho[i]);
+                ho[i].getThanhVien();
+                System.out.println("------------------------------------------");
+                finded = true;
+            }
+        }
+        if(!finded){
+            System.out.println("Khong tim thay");
+        }
+    }
 }
