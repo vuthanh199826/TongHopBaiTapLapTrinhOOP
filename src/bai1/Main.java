@@ -8,8 +8,8 @@ public class Main {
         System.out.println("Bạn muốn danh sách có bao nhiêu phần tử?");
         int size = sc.nextInt();
         QLCB ql = new QLCB(size);
-        int option = - 1;
-        while (option!=0){
+        int option;
+        while (true){
             display();
             System.out.println("Nhập lựa chọn vào đây");
             option = sc.nextInt();
