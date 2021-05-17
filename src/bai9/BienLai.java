@@ -20,8 +20,9 @@ public class BienLai {
         return khachHang;
     }
 
-    public void setKhachHang(KhachHang khachHang) {
-        this.khachHang = khachHang;
+    public void setKhachHang(String name, int soNha) {
+        this.khachHang.setName(name);
+        this.khachHang.setSoNha(soNha);
     }
 
     public int getSoDienCu() {

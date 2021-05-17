@@ -6,25 +6,14 @@ public class ManageBienLai {
 
     public ManageBienLai() {
     }
-    public void displayBienLai(){
-        for (int i = 0; i < index; i++) {
-            System.out.println(array[i]);
-        }
-    }
     public void addBienLai(BienLai bienLai){
         array[index] = bienLai;
         index++;
     }
-
-    public void fixBienLai(int maSoCongToDien, BienLai bienLai){
-        int indexOfFix = searchViTri(maSoCongToDien);
-        if(indexOfFix >= 0){
-            array[indexOfFix] = bienLai;
-        }else {
-            System.out.println("Invalid");
+    public void displayAllBienLai(){
+        for (int i = 0; i < index; i++) {
+            System.out.println(array[i]);
         }
-
-
     }
     public int searchViTri(int maSoCongToDien){
         for (int i = 0; i < index; i++) {
@@ -35,6 +24,22 @@ public class ManageBienLai {
         return -1;
 
     }
+    public BienLai getBienLai(int maSoCongToDien){
+        int indexBienLai = searchViTri(maSoCongToDien);
+        return array[indexBienLai];
+    }
+
+
+    public void fixBienLai(int maSoCongToDien, BienLai bienLai){
+        int indexOfFix = searchViTri(maSoCongToDien);
+        if(indexOfFix >= 0){
+            array[indexOfFix] = bienLai;
+        }else {
+            System.out.println("Invalid");
+        }
+
+    }
+
     public void deleteBienLai(int maSoCongToDien){
        int indexOfDelete = searchViTri(maSoCongToDien);
         if(indexOfDelete >= 0){
