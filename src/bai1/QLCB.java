@@ -3,84 +3,66 @@ package bai1;
 import java.util.Scanner;
 
 public class QLCB {
-    private CanBo[] danhsach;
+    private CanBo[] canBo;
     private int index;
 
     public QLCB(int size) {
-        this.danhsach = new CanBo[size];
+        this.canBo = new CanBo[size];
         this.index = 0;
     }
+
     public int getIndex() {
         return index;
     }
 
 
-    public void searchCanBo(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập tên muốn tìm");
-        String name = sc.nextLine();
+    public String searchCanBo(String name) {
+        CanBo[]search = new CanBo[this.canBo.length];
+        int indexOfSearch =0;
         boolean finded = false;
-        int indexOfSearch = -1;
+//        int indexOfSearch = -1;
         for (int i = 0; i < index; i++) {
-            if(name.equals(danhsach[i].getName())){
+            if (name.equals(canBo[i].getName())) {
                 finded = true;
-                indexOfSearch = i;
-                break;
+                search[indexOfSearch] = canBo[i];
+                indexOfSearch++;
             }
         }
-        if(finded){
-            System.out.println(danhsach[indexOfSearch]);
-        }else {
-            System.out.println("Không tìm thấy");
+        String str = "";
+        for (int i = 0; i < indexOfSearch; i++) {
+            str += search[i].toString();
+            System.out.println();
+        }
+        if (finded) {
+            return str;
+        } else {
+            return "Không tìm thấy";
         }
     }
 
-    public void addCanBo(int option) {
+    public void addCanBo(String name, int age,String gender,String address) {
         Scanner sc = new Scanner(System.in);
-        switch (option) {
+        System.out.println("Bạn muốn thêm cán bộ nào?");
+        System.out.println("1.Công nhân   2.Kỹ Sư    3.Nhân Viên");
+        int choice = sc.nextInt();
+        sc.nextLine();
+        switch (choice) {
             case 1:
-                System.out.println("Nhập tên");
-                String name = sc.nextLine();
-                System.out.println("Nhập tuổi");
-                int age = sc.nextInt();
-                sc.nextLine();
-                System.out.println("Nhập giới tính (String)");
-                String gender = sc.nextLine();
-                System.out.println("Nhập địa chỉ");
-                String address = sc.nextLine();
                 System.out.println("Nhập bậc");
                 int bac = sc.nextInt();
-                this.danhsach[index] = new CongNhan(name, age, gender, address, bac);
+                this.canBo[index] = new CongNhan(name, age, gender, address, bac);
                 index++;
                 break;
             case 2:
-                System.out.println("Nhập tên");
-                String name1 = sc.nextLine();
-                System.out.println("Nhập tuổi");
-                int age1 = sc.nextInt();
-                sc.nextLine();
-                System.out.println("Nhập giới tính");
-                String gender1 = sc.nextLine();
-                System.out.println("Nhập địa chỉ");
-                String address1 = sc.nextLine();
                 System.out.println("Nhập ngành đào tạo");
                 String nganhdaotao = sc.nextLine();
-                this.danhsach[index] = new KySu(name1, age1, gender1, address1, nganhdaotao);
+                this.canBo[index] = new KySu(name, age, gender, address, nganhdaotao);
                 index++;
                 break;
             case 3:
-                System.out.println("Nhập tên");
-                String name2 = sc.nextLine();
-                System.out.println("Nhập tuổi");
-                int age2 = sc.nextInt();
-                sc.nextLine();
-                System.out.println("Nhập giới tính");
-                String gender2 = sc.nextLine();
-                System.out.println("Nhập địa chỉ");
-                String address2 = sc.nextLine();
                 System.out.println("Nhập công việc");
                 String congviec = sc.nextLine();
-                this.danhsach[index] = new NhanVien(name2, age2, gender2, address2, congviec);
+                this.canBo[index] = new NhanVien(name, age, gender, address, congviec);
                 index++;
                 break;
         }
@@ -88,9 +70,8 @@ public class QLCB {
 
     public void displayCanbo() {
         for (int i = 0; i < index; i++) {
-            System.out.println(danhsach[i]);
+            System.out.println(canBo[i]);
         }
     }
-
-
 }
+

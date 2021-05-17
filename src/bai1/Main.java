@@ -7,22 +7,31 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Bạn muốn danh sách có bao nhiêu phần tử?");
         int size = sc.nextInt();
+        sc.nextLine();
         QLCB ql = new QLCB(size);
         int option;
         while (true){
             display();
             System.out.println("Nhập lựa chọn vào đây");
             option = sc.nextInt();
+            sc.nextLine();
             switch (option){
                 case 1:
-                    int choice;
-                    System.out.println("Bạn muốn thêm cán bộ nào?");
-                    System.out.println("1.Công nhân   2.Kỹ Sư    3.Nhân Viên");
-                    choice = sc.nextInt();
-                    ql.addCanBo(choice);
+                    System.out.println("Nhập tên");
+                    String name = sc.nextLine();
+                    System.out.println("Nhập tuổi");
+                    int age = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("Nhập giới tính (String)");
+                    String gender = sc.nextLine();
+                    System.out.println("Nhập địa chỉ");
+                    String address = sc.nextLine();
+                    ql.addCanBo(name,age,gender,address);
                     break;
                 case 2:
-                    ql.searchCanBo();
+                    System.out.println("Nhập tên muốn tìm");
+                    String nameOfSearch = sc.nextLine();
+                    System.out.println(ql.searchCanBo(nameOfSearch));
                     break;
                 case 3:
                     ql.displayCanbo();
