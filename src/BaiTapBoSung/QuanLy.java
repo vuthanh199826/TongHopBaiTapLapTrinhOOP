@@ -17,11 +17,13 @@ public class QuanLy<T> implements ThaoTac<NhanVien> {
     public void remove(T e) {
         list.remove(e);
     }
-    public void search(String name){
+
+    public void search(String name) {
         Iterator<CanBo> iterator = (Iterator<CanBo>) list.iterator();
-        while (iterator.hasNext()){
-            if(iterator.next().getName().equals(name)){
-            System.out.println(iterator.next());}
+        while (iterator.hasNext()) {
+            if (iterator.next().getName().equals(name)) {
+                System.out.println(iterator.next());
+            }
         }
     }
 

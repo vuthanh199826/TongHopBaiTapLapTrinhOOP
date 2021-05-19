@@ -14,9 +14,6 @@ public class Main {
         while (element.hasNext()){
             System.out.println(element.next());
         }
-
-
-
     }
 
 
